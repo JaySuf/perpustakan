@@ -1,21 +1,25 @@
+<!DOCTYPE html>
 <html>
-<form action="./simpan_buku.php" method="post">
-  <label for="fname">Judul Buku:</label>
-  <input type="text" id="fname" name="judul_buku"><br><br>
-  <label for="lname">Penulis:</label>
-  <input type="text" id="lname" name="penulis"><br><br>
-  <label for="lname">Penerbit:</label>
-  <input type="text" id="lname" name="penerbit"><br><br>
-  <label for="lname">Genre:</label>
-  <input type="text" id="lname" name="genre"><br><br>
-  <label for="lname">ISBN:</label>
-  <input type="text" id="lname" name="isbn"><br><br>
-  <label for="lname">Tahun Terbit:</label>
-  <input type="text" id="lname" name="tahun_terbit"><br><br>
-  <label for="lname">Jumlah Halaman:</label>
-  <input type="text" id="lname" name="jumlah_halaman"><br><br>
-  <button type="submit" class="btn btn-primary" name="kirim">Tambah Buku</button>
-</form>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
 
+<table style="width:100%">
+  <tr>
+    <th>buku</th>
+    <th>anggota</th>
+    <th>halaman peminjam</th>
+    <th>halaman Riwayat peminjam</th>
+  </tr>
+  <tr>
+  <td><a href="index_buku.php">halaman buku</a></td>
+  <td><a href="index_anggota.php">halaman anggota</a></td>
+  <td><a href="index_peminjam.php">halaman peminjam</a></td>
+  <td><a href="index_riwayat_peminjam.php">halaman Riwayat peminjam</a></td>
+  </tr>
+</table>
     </html>
 

@@ -2,6 +2,7 @@
 include 'db.php';
 if (isset($_POST["kirim"])) {
 // menangkap data yang di kirim dari form
+$id = $_POST['id'];
 $judul_buku = $_POST['judul_buku'];
 $penulis = $_POST['penulis'];
 $penerbit = $_POST['penerbit'];
@@ -14,13 +15,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
   
-  $sql = "INSERT INTO `buku` (`judul_buku`, `penulis`, `penerbit`, `genre`, `isbn`, `tahun_terbit`, `jumlah_halaman`)
-   VALUES ('$judul_buku', '$penulis', '$penerbit', '$genre', '$isbn', '$tahun_terbit', '$jumlah_halaman')
+  $sql = "UPDATE `buku` SET `judul_buku` = '$judul_buku', `penulis` = '$penulis', `penerbit` = '$penerbit', `genre` = '$genre', `isbn` = '$isbn', `tahun_terbit` = '$tahun_terbit', `jumlah_halaman` = '$jumlah_halaman' WHERE `buku`.`id` = '$id';
   ";
   
   if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header("location:index_anggota.php"); 
+    header("location:index.php");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
